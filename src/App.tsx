@@ -1,24 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
+import ProgressBar from './components/ProgressBar';
 import './App.css';
 
 function App() {
+  const [value, setValue] = useState<number>(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setValue((val) => {
+        if (val >= 100) {
+          clearInterval(timer);
+          return 100;
+        }
+        return val + 1;
+      });
+    }, 100);
+
+    return () => clearInterval(timer);
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <span>Progress Bar</span>
+      <ProgressBar value={value} />
     </div>
   );
 }
