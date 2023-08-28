@@ -1,3 +1,10 @@
+
+
+
+https://github.com/EmiRoberti77/react_progressbar/assets/114434826/c2cc5067-4f75-4d38-af7b-8708beea7744
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
