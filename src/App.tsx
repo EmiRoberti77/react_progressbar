@@ -18,6 +18,7 @@ function App() {
 
     return () => clearInterval(timer);
   }, []);
+
   return (
     <div className="app">
       <span>Progress Bar</span>
